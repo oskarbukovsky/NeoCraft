@@ -1,39 +1,34 @@
 name: Create Archive
-on: 
-  [push]
+on: [push]
 jobs:
   tag:
-      runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: 
-          - 12
-      steps: 
-      - uses: phish108/autotag-action@v1.1.55
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN}}
+    runs-on: ubuntu-latest
+    steps:
+    - uses: butlerlogic/action-autotag@1.0.0
+      with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        tagname: "latest" 
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@master
-      name: Archive Release
-    - uses: thedoctor0/zip-release@main
-      with:
-        path: '${{ github.workspace }}/*'
-        directory: '../.'
-        type: 'zip'
-        filename: '${{ github.workspace }}/NeoCraft_[1.18.2].zip'
-        exclusions: '*.git* /*node_modules/* .editorconfig'
-    - name: Upload Release
-      uses: ncipollo/release-action@v1
-      with:
-        commit: master
-        tag: latest
-        artifacts: "${{ github.workspace }}/NeoCraft_[1.18.2].zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+      - uses: actions/checkout@master
+        name: Archive Release
+      - uses: thedoctor0/zip-release@main
+        with:
+          path: "${{ github.workspace }}/*"
+          directory: "../."
+          type: "zip"
+          filename: "${{ github.workspace }}/NeoCraft_[1.18.2].zip"
+          exclusions: "*.git* /*node_modules/* .editorconfig"
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+          commit: master
+          tag: latest
+          artifacts: "${{ github.workspace }}/NeoCraft_[1.18.2].zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   zip:
     runs-on: ubuntu-latest
@@ -41,30 +36,30 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    #- name: ReCreate release branch
-    #  run: |
-    #    git push origin --delete release
-    #    git branch release
+      #- name: ReCreate release branch
+      #  run: |
+      #    git push origin --delete release
+      #    git branch release
 
-    #- name: Checkout release branch
-    #  run: git checkout release
+      #- name: Checkout release branch
+      #  run: git checkout release
 
-    - name: Create release zip file
-      run: zip -r release.zip . -x "*.git*"
-      
-    - name: Dropbox Uploader
-      uses: oskarbukovsky/action-dropbox@1.0.2
-      with:
-        accessToken: ${{ secrets.DROPBOX_TOKEN }}
-        destination: /NeoCraft_[1.18.2]
-        file: release.zip
-      
+      - name: Create release zip file
+        run: zip -r release.zip . -x "*.git*"
+
+      - name: Dropbox Uploader
+        uses: oskarbukovsky/action-dropbox@1.0.2
+        with:
+          accessToken: ${{ secrets.DROPBOX_TOKEN }}
+          destination: /NeoCraft_[1.18.2]
+          file: release.zip
+
     #- name: Track release zip with LFS
     #  run: git lfs track release.zip
-      
+
     #- name: Commit and push release zip
     #  run: |
     #    git config --global user.email "janoskarbukovsky@gmail.com"
