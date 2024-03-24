@@ -4,27 +4,14 @@ on:
 jobs:
   tag:
       runs-on: ubuntu-latest
-      steps:
-      - name: Tag
-        uses: actions/github-script@v3
+      strategy:
+        matrix:
+          node-version: 
+          - 12
+      steps: 
+      - uses: phish108/autotag-action@v1.1.55
         with:
-          github-token: ${{secrets.GITHUB_TOKEN}}          
-          script: |
-            try {
-                await github.git.deleteRef({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  ref: "tags/latest"
-                })
-            } catch (e) {
-              console.log("The latest tag doesn't exist yet: " + e)
-            }
-            await github.git.createRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: "refs/tags/latest",
-              sha: context.sha
-            })
+          github-token: ${{ secrets.GITHUB_TOKEN}}
   build:
     runs-on: ubuntu-latest
     permissions:
