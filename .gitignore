@@ -10,12 +10,14 @@
 !mods/
 !resourcepacks/
 !resources/
+!.github/
 
 !bin/**/*
 !config/**/*
 !mods/**/*
 !resourcepacks/**/*
 !resources/**/*
+!.github/**/*
 
 # Unignore files
 !servers.dat
