@@ -18,7 +18,7 @@
 !resourcepacks/**/*
 !resources/**/*
 !.github/**/*
- 
+
 # Unignore files
 !servers.dat
 !optionsof.txt
