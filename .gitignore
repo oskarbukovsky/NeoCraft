@@ -27,5 +27,7 @@
 
 # Ignore files
 *.log
+usernamecache.json
+patchouli_data.json
 usercache.json
 mods/*.disabled
