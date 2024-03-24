@@ -1,0 +1,23 @@
+{
+  "bookGuiScale": 0,
+  "clickedVisualize": false,
+  "bookData": {
+    "bigreactors:erguide": {
+      "viewedEntries": [
+        "bigreactors:intro/first"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    },
+    "extendedcrafting:guide": {
+      "viewedEntries": [
+        "extendedcrafting:utilities/handheld_table",
+        "extendedcrafting:components/ultimate_singularity",
+        "extendedcrafting:crafting/combination",
+        "extendedcrafting:crafting/ender_crafting"
+      ],
+      "bookmarks": [],
+      "completedManualQuests": []
+    }
+  }
+}
