@@ -41,7 +41,7 @@ jobs:
       - name: Upload Release
         uses: ncipollo/release-action@v1
         with:
-          commit: master
+          commit: main
           tag: latest
           artifacts: "${{ github.workspace }}/NeoCraft_[1.18.2].zip"
           token: ${{ secrets.GITHUB_TOKEN }}
