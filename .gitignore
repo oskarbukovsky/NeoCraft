@@ -31,3 +31,4 @@ usernamecache.json
 patchouli_data.json
 usercache.json
 mods/*.disabled
+config/reforgium-renderer.properties
