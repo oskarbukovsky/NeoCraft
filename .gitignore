@@ -11,6 +11,7 @@
 !resourcepacks/
 !resources/
 !.github/
+!natives/
 
 !bin/**/*
 !config/**/*
@@ -18,6 +19,7 @@
 !resourcepacks/**/*
 !resources/**/*
 !.github/**/*
+!natives/**/*
 
 # Unignore files
 !servers.dat
