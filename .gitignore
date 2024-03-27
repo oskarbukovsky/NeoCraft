@@ -30,7 +30,11 @@
 # Ignore files
 *.log
 usernamecache.json
+profile.json
 patchouli_data.json
 usercache.json
+options.txt
 mods/*.disabled
-config/reforgium-renderer.properties
+config/reforgium-render*
+config/byg/backups/
+config/byg/backups/**/*
