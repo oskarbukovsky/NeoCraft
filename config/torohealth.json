@@ -2,8 +2,8 @@
   "watchForChanges": true,
   "hud": {
     "distance": 60,
-    "x": 3.0,
-    "y": 22.0,
+    "x": 4.0,
+    "y": 16.0,
     "scale": 1.0,
     "hideDelay": 20,
     "anchorPoint": "TOP_LEFT",

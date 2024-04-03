@@ -18,8 +18,8 @@
   "overlay": {
     "overlayPosX": 0.5,
     "overlayPosY": 0.9945652,
-    "overlayScale": 1.0021739,
-    "overlayAnchorX": 0.5,
+    "overlayScale": 1.0,
+    "overlayAnchorX": 0.51086956,
     "overlayAnchorY": 0.0,
     "overlaySquare": false,
     "flipMainHand": false,

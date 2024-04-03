@@ -24,13 +24,11 @@
     "sky_colors": true
   },
   "render_settings": {
-    "fog_distance": 12,
+    "fog_distance": 0,
     "fog_start": 100,
     "multi_dimension_fog_control": false,
     "dimensionFogDistance": {
-      "minecraft:overworld": 0,
-      "minecraft:the_nether": 0,
-      "minecraft:the_end": 0
+      "minecraft:overworld": 0
     },
     "use_linear_flat_color_blender": false,
     "light_updates": true,
@@ -51,7 +49,7 @@
     "show_coords": false,
     "reduce_resolution_on_mac": true,
     "use_adaptive_sync": false,
-    "cloud_height": 192,
+    "cloud_height": 208,
     "toasts": true,
     "advancement_toast": true,
     "recipe_toast": true,
@@ -62,7 +60,7 @@
     "use_fast_random": true
   },
   "notification_settings": {
-    "hide_r_s_o_recommendation": false
+    "hide_r_s_o_recommendation": true
   },
   "super_secret_settings": {
     "fetch_sodium_extra_crowdin_translations": false,
